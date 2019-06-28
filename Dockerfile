@@ -8,7 +8,8 @@ RUN apt-get install -y \
   wget \
   git \
   python-pip \
-  python3-pip 
+  python3-pip \
+  jq
 
 RUN pip install awscli ansi2html boto3 detect-secrets
 
