@@ -1,15 +1,15 @@
-FROM ubuntu:18.04
-LABEL maintainer="teknofile@teknofile.org"
+FROM lsiobase/alpine:3.10
+LABEL maintainer="teknofile <teknofile@teknofile.org>"
 
-RUN apt-get update && apt-get upgrade -y
-
-RUN apt-get install -y \
-  curl \
-  wget \
-  git \
-  python-pip \
-  python3-pip \
-  jq
+RUN echo "** Installing pkgs ** " && \
+  apk add --no-cache \
+    git \
+    curl \
+    wget \
+    net-tools \
+    zip \
+    unzip \
+    py2-pip
 
 RUN pip install awscli ansi2html boto3 detect-secrets
 
